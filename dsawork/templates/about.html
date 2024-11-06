@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINALIZE FINSERV - Financial Solutions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #ffffff;
+            box-sizing: border-box;
+        }
+        .header {
+            background-color: #ffffff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .header img {
+            height: 50px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .navbar .logo img {
+            height: 50px;
+        }
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+        .navbar .nav-links a:hover {
+            color: #007bff;
+        }
+        .navbar .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .navbar .contact-info i {
+            color: #007bff;
+        }
+        .navbar .contact-info span {
+            color: #28a745;
+            font-weight: 700;
+        }
+        .main-content {
+            display: flex;
+            padding: 40px 20px;
+            background-color: #ffffff;
+        }
+        .main-content img {
+            width: 400px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .main-content .text-content {
+            margin-left: 40px;
+        }
+        .main-content .text-content h2 {
+            color: #1a1a1a;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .main-content .text-content p {
+            color: #6c757d;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .main-content .text-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .main-content .text-content ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+            font-size: 16px;
+        }
+        .main-content .text-content ul li i {
+            color: #007bff;
+            margin-right: 10px;
+        }
+        .main-content .text-content .btn {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .main-content .text-content .btn:hover {
+            background-color: #0056b3;
+        }
+        .badge {
+            position: absolute;
+            top: 300px;
+            left: 50px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .badge img {
+            width: 50px;
+            height: 50px;
+        }
+        .badge p {
+            margin: 0;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 20px;
+            background-color: #0A2A43;
+            color: #FFFFFF;
+        }
+        .content-left {
+            width: 60%;
+        }
+        .content-left p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .content-right {
+            width: 35%;
+        }
+        .faq {
+            background-color: #FFFFFF;
+            color: #0A2A43;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            padding: 20px;
+            cursor: pointer;
+        }
+        .faq h3 {
+            font-size: 18px;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq p {
+            font-size: 16px;
+            margin: 10px 0 0;
+            display: none;
+        }
+        .faq.active p {
+            display: block;
+        }
+        .contact-button {
+            background-color: #007BFF;
+            color: #FFFFFF;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .scroll-up {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007BFF;
+            color: #FFFFFF;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .stats {
+            background-color: #007bff;
+            text-align: center;
+            padding: 50px 0;
+        }
+        .stats div {
+            display: inline-block;
+            margin: 0 20px;
+        }
+        .stats div h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .stats div p {
+            font-size: 18px;
+            margin: 5px 0 0;
+        }
+        .footer {
+            background-color: #0b1e36;
+            color: #ffffff;
+            padding: 40px 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+        .footer .column {
+            flex: 1;
+            padding: 0 20px;
+        }
+        .footer .column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .footer .column ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer .column ul li {
+            margin-bottom: 10px;
+        }
+        .footer .column ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .footer .column ul li a:hover {
+            text-decoration: underline;
+        }
+        .footer .contact-info {
+            line-height: 1.8;
+        }
+        .footer .contact-info i {
+            margin-right: 10px;
+        }
+        .footer .social-icons {
+            margin-top: 20px;
+        }
+        .footer .social-icons a {
+            color: #ffffff;
+            margin-right: 10px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        .footer .social-icons a:hover {
+            color: #007bff;
+        }
+        .footer-bottom {
+            background-color: #0a1a2e;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        .footer-bottom a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+
+
+                /* Media Queries */
+                @media only screen and (max-width: 768px) {
+                    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .navbar .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+            .main-content {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .main-content img {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .main-content .text-content {
+                margin-left: 0;
+            }
+            .content {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .content-left, .content-right {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .navbar .nav-links {
+                flex-direction: column;
+                gap: 10px;
+ }
+            .navbar .contact-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .footer {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer .column {
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .main-content .text-content h2 {
+                font-size: 28px;
+            }
+            .main-content .text-content p {
+                font-size: 14px;
+            }
+            .navbar .nav-links a {
+                font-size: 14px;
+            }
+            .contact-button {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+            }
+            .stats div h1 {
+                font-size: 36px;
+            }
+            .footer .column h3 {
+                font-size: 16px;
+            }
+            .footer .column ul li a {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img alt="Finalize Finserv Logo" height="50" src="static/images/logo.jpeg" width="150" />
+ </div>
+        <div class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/loan">Apply For Loans</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </div>
+        <div class="contact-info">
+            <i class="fas fa-headset"></i>
+            <span>CALL ANYTIME</span>
+            <span>+91 8293029134</span>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <img alt="Happy customer holding a document" src="https://storage.googleapis.com/a1aa/image/YCefI42sL0gYfpLWaFgn4MMc8SPxeQNfemTaiyGNgXB9feitTA.jpg"/>
+        <div class="text-content">
+            <h2>Our Journey, Your Confidence</h2>
+            <p>Founded in 2019, FINALIZE is dedicated to serving India with honesty and professionalism. 
+                We bring your aspirations to life through clear and customized financial solutions designed specifically for you.</p>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Comprehensive Financial Solutions.</li>
+                <li><i class="fas fa-check-circle"></i> Strong Client Relationships.</li>
+                <li><i class="fas fa-check-circle"></i> Extensive Network</li>
+                <li><i class="fas fa-check-circle"></i> Seamless Credit Access.</li>
+                <li><i class="fas fa-check-circle"></i> Experience swift loan disbursement directly to your account.</li>
+            </ul>
+            <a class="btn" href="#">Know More</a>
+        </div>
+    </div>
+
+    <div class="badge">
+        <img alt="Financial expertise icon" src="https://storage.googleapis.com/a1aa/image/mvTMWSpTq8YVO9jBF25KOX6iDhCF65jC4CemopsIiWIAfitTA.jpg"/>
+        <p>Finalizing financial solutions for you!</p>
+    </div>
+
+    <div class="content">
+        <div class="content-left">
+            <h2>We Care About You</h2>
+            <p>Our experienced professionals are dedicated to providing you with the best financial advice, ensuring that your financial journey is seamless and rewarding. With tailored solutions and constant support, your goals are our top priority.</p>
+        </div>
+        <div class="content-right">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq">
+                <h3>What services do you offer? <i class="fas fa-chevron-down"></i></h3>
+                <p>We offer a wide range of financial services including loans, investments, and financial planning.</p>
+            </div>
+            <div class="faq">
+                <h3>How can I contact you? <i class="fas fa-chevron-down"></i></h3>
+                <p>You can reach us via our contact page or call us directly at +91 7019718133.</p>
+            </div>
+            <div class="faq">
+                <h3>What are your office hours? <i class="fas fa-chevron-down"></i></h3>
+                <p>Our office hours are Monday to Friday, 9 AM to 6 PM.</p>
+            </div>
+            <button class="contact-button">Contact Us</button>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div>
+            <h1>1000+</h1>
+            <p>Happy Clients</p>
+        </div>
+        <div>
+            <h1>50+</h1>
+            <p>Services Offered</p>
+        </div>
+        <div>
+            <h1>200+</h1>
+            <p>Financial Experts</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="column">
+            <img alt="Finalize Finserv Logo" height="50" src="https://storage.googleapis.com/a1aa/image/uUDoNfilT1yzYyKo55j8zddC1f9rtgJHMqZ3UqfEyuWMcHbnA.jpg" width="150"/>
+            <p>
+                Discover tailored financial solutions to empower your dreams. Trust FINALIZE for expert guidance and seamless service excellence.
+            </p>
+            <div class="social-icons">
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>Our Services</h3>
+            <ul>
+                <li><a href="#">Personal Loan</a></li>
+                <li><a href="#">Home Loan</a></li>
+                <li><a href="#">Business Loan</a></li>
+                <li><a href="#">Gold Loan</a></li>
+                <li><a href="#">Car Loan</a></li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>Contact</h3>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> ghorenukul25@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 8293029134 || 8293029134</p>
+                <p><i class="fas fa-map-marker-alt"></i> Plot No. 59 Old Nandawn Ganesh Nagar Nagpur 440024</p>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <p>&copy; 2024 GNG ASSOCIATES AND DSA WORK Pvt Ltd. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+    </div>
+
+    <script>
+        // FAQ toggle functionality
+        const faqElements = document.querySelectorAll('.faq');
+        faqElements.forEach(faq => {
+            faq.addEventListener('click', () => {
+                faq.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

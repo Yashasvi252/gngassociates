@@ -1,0 +1,334 @@
+<html>
+ <head>
+  <title>
+   Finalize Finserv - Instant Loan Application
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+   body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f2f5;
+    }
+    .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .navbar .logo img {
+            height: 50px;
+        }
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+        .navbar .nav-links a:hover {
+            color: #007bff;
+        }
+        .navbar .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .navbar .contact-info i {
+            color: #007bff;
+        }
+        .navbar .contact-info span {
+            color: #28a745;
+            font-weight: 700;
+        }
+
+    .form-section {
+      background-color: #f1f3f5;
+      padding: 60px 0;
+    }
+    .form-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 40px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    .form-container .form {
+      flex: 1;
+      padding-right: 40px;
+    }
+    .form-container .form h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .form-container .form input, .form-container .form select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+    }
+    .form-container .form button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .form-container .form button:hover {
+      background-color: #0056b3;
+    }
+    .form-container .image-container {
+      flex: 1;
+      padding-left: 40px;
+    }
+    .form-container .image-container img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .footer {
+            background-color: #0b1e36;
+            color: #ffffff;
+            padding: 40px 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+        .footer .column {
+            flex: 1;
+            padding: 0 20px;
+        }
+        .footer .column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .footer .column ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer .column ul li {
+            margin-bottom: 10px;
+        }
+        .footer .column ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .footer .column ul li a:hover {
+            text-decoration: underline;
+        }
+        .footer .contact-info {
+            line-height: 1.8;
+        }
+        .footer .contact-info i {
+            margin-right: 10px;
+        }
+        .footer .social-icons {
+            margin-top: 20px;
+        }
+        .footer .social-icons a {
+            color: #ffffff;
+            margin-right: 10px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        .footer .social-icons a:hover {
+            color: #007bff;
+        }
+        .footer-bottom {
+            background-color: #0a1a2e;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        .footer-bottom a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+         /* Media Queries */
+         @media only screen and (max-width: 768px) {
+            .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .navbar .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+            .form-container {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .form-container .form,
+            .form-container .image-container {
+                padding: 0;
+                width: 100%;
+            }
+            .footer {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer .column {
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .navbar .contact-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .footer .column h3 {
+                font-size: 16px;
+            }
+            .footer .column ul li a {
+                font-size: 14px;
+            }
+            .form-container .form h2 {
+                font-size: 20px;
+            }
+            .form-container .form input,
+            .form-container .form select {
+                padding: 8px;
+            }
+            .form-container .form button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+
+  </style>
+ </head>
+ <body>
+    <div class="navbar">
+        <div class="logo">
+            <img alt="Finalize Finserv Logo" height="50" src="static/images/logo.jpeg" width="150" />
+ </div>
+        <div class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/loan">Apply For Loans</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </div>
+        <div class="contact-info">
+            <i class="fas fa-headset"></i>
+            <span>CALL ANYTIME</span>
+            <span>+91 8293029134</span>
+        </div>
+    </div>
+
+  <section class="form-section">
+   <div class="form-container">
+    <!-- Left Form Section -->
+    <div class="form">
+     <h2>Apply For Instant Loan Online</h2>
+     <form>
+      <input placeholder="Your Email*" required="" type="email"/>
+      <input placeholder="Mobile Number" type="tel"/>
+      <select required="">
+       <option disabled="" selected="" value="">Choose Your Gender</option>
+       <option value="male">Male</option>
+       <option value="female">Female</option>
+       <option value="other">Other</option>
+      </select>
+      <input placeholder="Enter Your Pan Number" type="text"/>
+      <input placeholder="Select Your Date Of Birth" type="date"/>
+      <input placeholder="Enter Your Pin Code" type="text"/>
+      <input placeholder="Enter Your Monthly In Hand Salary" type="text"/>
+      <input placeholder="Enter Your Aadhar Number" type="text"/>
+      <select required="">
+       <option disabled="" selected="" value="">Choose Your Profession</option>
+       <option value="salaried">Salaried</option>
+       <option value="self-employed">Self-Employed</option>
+       <option value="student">Student</option>
+       <option value="other">Other</option>
+      </select>
+      <button>Apply Now</button>
+     </form>
+    </div>
+
+    <!-- Right Image Section -->
+    <div class="image-container">
+     <img alt="Loan Application Image" src="static\images\applyloan.png" />
+    </div>
+   </div>
+  </section>
+
+  <footer class="footer">
+    <div class="column">
+        <img alt="Finalize Finserv Logo" height="50" src="https://storage.googleapis.com/a1aa/image/uUDoNfilT1yzYyKo55j8zddC1f9rtgJHMqZ3UqfEyuWMcHbnA.jpg" width="150"/>
+        <p>
+            Discover tailored financial solutions to empower your dreams. Trust FINALIZE for expert guidance and seamless service excellence.
+        </p>
+        <div class="social-icons">
+            <a href="#">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+    <div class="column">
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <div class="column">
+        <h3>Our Services</h3>
+        <ul>
+            <li><a href="#">Personal Loan</a></li>
+            <li><a href="#">Home Loan</a></li>
+            <li><a href="#">Business Loan</a></li>
+            <li><a href="#">Gold Loan</a></li>
+            <li><a href="#">Car Loan</a></li>
+        </ul>
+    </div>
+    <div class="column">
+        <h3>Contact</h3>
+        <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> ghorenukul25@gmail.com</p>
+            <p><i class="fas fa-phone"></i> +91 8293029134 || 8293029134</p>
+            <p><i class="fas fa-map-marker-alt"></i> Plot No. 59 Old Nandawn Ganesh Nagar Nagpur 440024</p>
+        </div>
+    </div>
+</footer>
+<div class="footer-bottom">
+    <p>&copy; 2024 GNG ASSOCIATES AND DSA WORK Pvt Ltd. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+</div>
+
+  <div class="back-to-top">
+   <a href="#top">Back to top</a>
+  </div>
+ </body>
+</html>

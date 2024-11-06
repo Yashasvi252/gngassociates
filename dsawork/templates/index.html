@@ -1,0 +1,694 @@
+<html>
+<head>
+    <title>Finalize Finserv</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .navbar .logo img {
+            height: 50px;
+        }
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+        .navbar .nav-links a:hover {
+            color: #007bff;
+        }
+        .navbar .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .navbar .contact-info i {
+            color: #007bff;
+        }
+        .navbar .contact-info span {
+            color: #28a745;
+            font-weight: 700;
+        }
+        .hero {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            filter: brightness(50%);
+        }
+        .hero .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .hero .hero-text h1 {
+            font-size: 48px;
+            margin: 10px 0;
+        }
+        .hero .hero-text p {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .hero .hero-text .buttons {
+            margin-top: 20px;
+        }
+        .hero .hero-text .buttons a {
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 10px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+        .hero .hero-text .buttons a:hover {
+            background-color: #0056b3;
+        }
+        section {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        section p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .contact-info {
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #007bff;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .testimonials {
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+        }
+        .testimonial {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        .testimonial p {
+            font-style: italic;
+        }
+        .testimonial span {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+
+        
+        /* services */
+        .content {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .content h2 {
+      color: #1a2b49;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .content h3 {
+      color: #1a2b49;
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+    .products {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .product-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      padding: 20px;
+      text-align: left;
+    }
+    .product-card h4 {
+      color: #1a2b49;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .product-card p {
+      color: #6c757d;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .product-card a {
+      text-decoration: none;
+      color: #1a2b49;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .product-card a i {
+      font-size: 12px;
+    }
+
+
+
+    /* apply for loans */
+    .form-section {
+      background-color: #f1f3f5;
+      padding: 60px 0;
+    }
+    .form-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 40px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    .form-container .form {
+      flex: 1;
+      padding-right: 40px;
+    }
+    .form-container .form h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .form-container .form input, .form-container .form select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+    }
+    .form-container .form button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .form-container .form button:hover {
+      background-color: #0056b3;
+    }
+    .form-container .image-container {
+      flex: 1;
+      padding-left: 40px;
+    }
+    .form-container .image-container img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .footer {
+      background-color: #0a1f44;
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .footer .column {
+      flex: 1;
+      margin: 10px;
+    }
+    .footer .column h3 {
+      margin-bottom: 20px;
+    }
+    .footer .column ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer .column ul li {
+      margin-bottom: 10px;
+    }
+    .footer .column ul li a {
+      color: white;
+      text-decoration: none;
+    }
+    .footer .column ul li a:hover {
+      text-decoration: underline;
+    }
+    .footer .contact-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer .contact-info a {
+      color: white;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    .footer .contact-info a:hover {
+      text-decoration: underline;
+    }
+    .footer .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+
+
+    /* about section */
+    .main-content {
+            display: flex;
+            padding: 40px 20px;
+            background-color: #ffffff;
+        }
+        .main-content img {
+            width: 400px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .main-content .text-content {
+            margin-left: 40px;
+        }
+        .main-content .text-content h2 {
+            color: #1a1a1a;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .main-content .text-content p {
+            color: #6c757d;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .main-content .text-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .main-content .text-content ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+            font-size: 16px;
+        }
+        .main-content .text-content ul li i {
+            color: #007bff;
+            margin-right: 10px;
+        }
+        .main-content .text-content .btn {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .main-content .text-content .btn:hover {
+            background-color: #0056b3;
+        }
+
+
+
+
+        /* contact Section */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px;
+        }
+        .contact-info-section {
+            width: 40%;
+        }
+        .contact-info-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .contact-info-section .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .contact-info-section .info-item i {
+            font-size: 24px;
+            color: #0056b3;
+            margin-right: 15px;
+        }
+        .contact-info-section .info-item div {
+            font-size: 16px;
+        }
+        .contact-info-section .info-item div span {
+            display: block;
+            font-weight: bold;
+        }
+        .contact-form-section {
+            width: 55%;
+            background-color: #e9eef3;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .contact-form-section input,
+        .contact-form-section textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form-section button {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-form-section button:hover {
+            background-color: #004494;
+        }
+
+        .contact-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+.contact-form-section {
+    flex: 1; /* Adjust the width as needed */
+    margin-right: 20px; /* Space between the form and the image */
+}
+
+.contact-image-section {
+    flex: 1; /* Adjust the width as needed */
+}
+
+.contact-image-section img {
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+ /* Media Queries */
+ @media only screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .navbar .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+            .hero .hero-text h1 {
+                font-size: 36px;
+            }
+            .hero .hero-text p {
+                font-size: 20px;
+            }
+            .form-container {
+                flex-direction: column;
+            }
+            .form-container .form,
+            .form-container .image-container {
+                padding: 0;
+                width: 100%;
+            }
+            .contact-section {
+                flex-direction: column;
+            }
+            .contact-info-section {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .contact-form-section {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .contact-info-section h2 {
+                font-size: 20px;
+            }
+ .contact-info-section .info-item i {
+                font-size: 20px;
+            }
+            .contact-info-section .info-item div {
+                font-size: 14px;
+            }
+            .contact-form-section input,
+            .contact-form-section textarea {
+                padding: 8px;
+            }
+            .contact-form-section button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            .footer .column h3 {
+                font-size: 16px;
+            }
+            .footer .column ul li a {
+                font-size: 14px;
+            }
+            .hero .hero-text h1 {
+                font-size: 28px;
+            }
+            .hero .hero-text p {
+                font-size: 16px;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img alt="Finalize Finserv Logo" height="50" src="static/images/logo.jpeg" width="150" />
+ </div>
+        <div class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/loan">Apply For Loans</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </div>
+        <div class="contact-info">
+            <i class="fas fa-headset"></i>
+            <span>CALL ANYTIME</span>
+            <span>+91 8293029134</span>
+        </div>
+    </div>
+    <div class="hero">
+        <img alt="Background Image of people in a meeting" height="540" src="https://storage.googleapis.com/a1aa/image/ZNyyOyMS137mHttdxRLZdiPBajbXOAUQMv8W4najj6pazY7E.jpg" width="960" />
+        <div class="hero-text">
+            <p>WELCOME TO GNG ASSOCIATES AND DSA WORK</p>
+            <h1>Get Your All Financial Solutions Under One Roof</h1>
+            <div class="buttons">
+                <a class="know-more" href="#">Know More</a>
+                <a class="contact" href="#">Contact Now</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>We offer a wide range of financial services to meet your needs, including:</p>
+        <div class="content">
+            <!-- <h3>What We're Offering</h3> -->
+            <h2>Our Products</h2>
+            <div class="products">
+              <div class="product-card">
+                <i class="fas fa-hand-holding-usd fa-2x" style="color: #1a2b49;"></i>
+                <h4>Personal Loan</h4>
+                <p>Personal loans offer flexible financing options tailored to individual needs, providing financial assistance for various purposes.</p>
+                <a href="#">Read More <i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div class="product-card">
+                <i class="fas fa-home fa-2x" style="color: #1a2b49;"></i>
+                <h4>Home Loan</h4>
+                <p>Discover our tailored home loan solutions, designed to help you secure your dream home with ease and confidence.</p>
+                <a href="#">Read More <i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div class="product-card">
+                <i class="fas fa-briefcase fa-2x" style="color: #1a2b49;"></i>
+                <h4>Business Loan</h4>
+                <p>Secure financing for your business growth with our flexible and competitive Business Loan solutions today.</p>
+                <a href="#">Read More <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        <!-- <ul>
+            <li>Personal Loans</li>
+            <li>Business Loans</li>
+            <li>Investment Solutions</li>
+            <li>Insurance Products</li>
+            <li>Financial Planning</li>
+        </ul> -->
+    </section>
+
+
+
+
+    <!-- Apply for Loans Section -->
+    <section id="apply-loans">
+        <h2>Apply for Loans</h2>
+        <p>Ready to get started? Fill out our loan application form and get your loan approved in no time!</p>
+
+
+        <section class="form-section">
+            <div class="form-container">
+             <!-- Left Form Section -->
+             <div class="form">
+              <h2>Apply For Instant Loan Online</h2>
+              <form>
+               <input placeholder="Your Email*" required="" type="email"/>
+               <input placeholder="Mobile Number" type="tel"/>
+               <select required="">
+                <option disabled="" selected="" value="">Choose Your Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+               </select>
+               <input placeholder="Enter Your Pan Number" type="text"/>
+               <input placeholder="Select Your Date Of Birth" type="date"/>
+               <input placeholder="Enter Your Pin Code" type="text"/>
+               <input placeholder="Enter Your Monthly In Hand Salary" type="text"/>
+               <input placeholder="Enter Your Aadhar Number" type="text"/>
+               <select required="">
+                <option disabled="" selected="" value="">Choose Your Profession</option>
+                <option value="salaried">Salaried</option>
+                <option value="self-employed">Self-Employed</option>
+                <option value="student">Student</option>
+                <option value="other">Other</option>
+               </select>
+               <button>Apply Now</button>
+              </form>
+             </div>
+         
+             <!-- Right Image Section -->
+             <div class="image-container">
+              <img alt="Loan Application Image" src="static\images\applyloan.png" />
+             </div>
+            </div>
+           </section>
+
+
+        <!-- <a class="contact" href="/loan">Apply Now</a> -->
+    </section>
+
+
+
+
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="main-content">
+            <img alt="Happy customer holding a document" src="https://storage.googleapis.com/a1aa/image/YCefI42sL0gYfpLWaFgn4MMc8SPxeQNfemTaiyGNgXB9feitTA.jpg"/>
+            <div class="text-content">
+                <h2>Our Story, Your Trust</h2>
+                <p>Established in 2019, FINALIZE is committed to serving India with integrity and expertise. We empower dreams through transparent and personalized financial solutions tailored to your needs.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Financial platform, providing all kinds of loans.</li>
+                    <li><i class="fas fa-check-circle"></i> We provide all financial services.</li>
+                    <li><i class="fas fa-check-circle"></i> We have good relationships with our clients.</li>
+                    <li><i class="fas fa-check-circle"></i> 200+ Partner Banks & NBFCs.</li>
+                    <li><i class="fas fa-check-circle"></i> Ease you get credit loan amount in your bank account.</li>
+                </ul>
+                <a class="btn" href="#">Know More</a>
+            </div>
+        </div>
+        <p>GNG ASSOCIATES AND DSA WORK Pvt Ltd is dedicated to providing comprehensive financial solutions tailored to your needs. Our team of experts is here to guide you every step of the way.</p>
+    </section>
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <!-- <h2>Contact Us</h2> -->
+        <h2>Contact Us</h2>
+<div class="contact-section">
+    <div class="contact-form-section">
+        <form action="YOUR_ACTION_URL_HERE" method="post"> <!-- Add the action URL here -->
+            <input placeholder="Your Name" required type="text" />
+            <input placeholder="Your Email" required type="email" />
+            <input placeholder="Subject" required type="text" />
+            <input placeholder="Mobile Number" required type="text" />
+            <textarea placeholder="Message" required rows="5"></textarea>
+            <button type="submit">Send A Message</button>
+        </form>
+    </div>
+    <div class="contact-image-section">
+        <img src="static\images\contactus.jpg" alt="Contact Us Image" />
+    </div>
+</div>
+
+
+        <p>If you have any questions or need assistance, feel free to reach out to us:</p>
+        <p>Email: <a href="mailto:ghorenukul25@gmail.com">ghorenukul25@gmail.com</a></p>
+        <p>Phone: <span>+91 8293029134</span></p>
+    </section>
+
+    <!-- Testimonials Section
+    <div class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial">
+            <p>"Finalize Finserv has been a game-changer for my business. Their loan services have helped me grow exponentially."</p>
+            <span>- John Doe, CEO of XYZ Corporation</span>
+        </div>
+        <div class="testimonial">
+            <p>"I was struggling to get a loan, but Finalize Finserv made it possible. Their team is very supportive and helpful."</p>
+            <span>- Jane Smith, Entrepreneur</span>
+        </div>
+    </div> -->
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 GNG ASSOCIATES AND DSA WORK Pvt Ltd. All rights reserved.</p>
+    </footer>
+</body>
+</html>
